@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="col-md-10">
+
+        <?php
+        $form->setAttribute('action', $this->url(
+            'login/process', [
+            'action' => 'authenticate',
+        ]));
+        $form->prepare();
+
+        echo $this->form()->openTag($form->setAttribute("role", "form")->setAttribute("class", "form-horizontal"));
+        ?>
+
+        <div class="form-group">
+            <?php
+            echo $this->formRow($form->get("username")
+                ->setAttribute("class", "form-control"));
+            ?>
+        </div>
+        <div class="form-group">
+            <?php
+            echo $this->formRow($form->get("password")
+                ->setAttribute("class", "form-control"));
+            ?>
+        </div>
+        <div class="checkbox">
+            <label style="font-weight: bold">
+                <?php
+                echo $this->formRow($form->get("rememberme"));
+                ?>
+            </label>
+        </div>
+        <br>
+
+        <div class="form-group">
+            <?php
+            echo $this->formSubmit($form->get("submit")
+                ->setAttribute('class', 'btn btn-primary'));
+            ?>
+
+            <a class="btn btn-warning"
+               href="javascript:history.back()" mce_href="javascript:history.back()">Назад</a>
+
+        </div>
+
+        <?php
+        echo $this->form()->closeTag();
+
+        if ($this->messages) {
+            foreach ($this->messages as $message) {
+                ?>
+                <div class="alert alert-warning"><?php $message ?></div>;
+                <?php
+            }
+        }
+        ?>
+
+    </div>
+</div>

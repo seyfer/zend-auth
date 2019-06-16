@@ -1,0 +1,22 @@
+<?php
+$store = new \Auth\Model\AuthStorage("auth_storage");
+$username = $store->read();
+
+if ($username) {
+    ?>
+    <a class="btn btn-success btn-lg"
+       href="<?php
+       echo $this->url('login/process', [
+           'action' => 'logout',
+       ]);
+       ?>">Выйти</a>
+<?php } else {
+    ?>
+    <a class="btn btn-success btn-lg"
+       href="<?php
+       echo $this->url('login/process', [
+           'action' => 'logout',
+       ]);
+       ?>">Войти</a>
+    <?php
+}

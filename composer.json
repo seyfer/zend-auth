@@ -1,0 +1,37 @@
+{
+  "name": "seyfer/zend-auth",
+  "version": "1.0",
+  "description": "Zend2 lib for authorization",
+  "homepage": "http://seyferseed.ru",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "seyfer",
+      "email": "seyferseed@mail.ru",
+      "homepage": "http://seyferseed.ru",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.4",
+    "zendframework/zendframework": "~2.5.3",
+    "doctrine/common": "~2.5.0",
+    "doctrine/orm": "~2.5.0",
+    "doctrine/doctrine-module": "~0.8.1",
+    "doctrine/doctrine-orm-module": "~0.9.0",
+    "seyfer/zend-base-model": "dev-master",
+    "bushbaby/doctrine-reconnect": "dev-master",
+    "seyfer/zend-sender": "dev-master"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.zendframework.com/"
+    }
+  ],
+  "autoload": {
+    "psr-0": {
+      "Auth\\": "src/"
+    }
+  }
+}
